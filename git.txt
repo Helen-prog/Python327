@@ -1,0 +1,72 @@
+Система контроля версий (Version Control Systems, VCS) — это система, сохраняющая изменения в одном или нескольких файлах
+так, чтобы потом можно было восстановить определённые старые версии.
+
+git --version
+git --help
+
+git init 
+- создание репозитория
+
+git status
+
+git add -A
+	-A или --all 
+		- все файлы, которые находятся в папке и во всех подпапках
+	main.py 
+		- только этот документ
+	. 
+		- все файлы, которые находятся в папке
+		
+git status
+
+git config --global user.name 'new user'
+git config --global user.email 'test@mail.ru'
+
+git commit -m "first commit"
+
+.gitignore
+
+folder
+	file.txt
+text.txt
+
+git branch
+- просмотр веток
+git branch test
+- создание новой ветки
+git branch -D test
+
+git branch readme
+git checkout readme
+
+readme.md
+
+git checkout master
+
+git merge readme 
+ - слияние веток
+ 
+git branch -D readme
+
+token
+
+WIN + R => contor
+
+Диспечер учетных данных
+Учетные данные Windows
+
+
+https://github.com
+
+git remote add origin https://github.com/Helen-prog/Python327.git
+
+git push -u origin master
+
+
+1) git add .
+2) git commit -m "dz"
+3) git push
+
+
+
+
