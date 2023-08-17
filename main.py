@@ -2668,6 +2668,8 @@ reg = r'20*'
 # # print(re.findall(r'[+-]?\d+\.?\d*', d))
 # print(re.findall(r'[+-]?[\d.]+', d))
 
-print("Hello git!!!")
+# print("Hello git!!!")
+#
+# print("Hello GitHub!!!")
 
-print("Hello GitHub!!!")
+print("Строка, созданная в новом репозитории")
