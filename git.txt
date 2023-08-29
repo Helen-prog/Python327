@@ -67,6 +67,12 @@ git push -u origin master
 2) git commit -m "dz"
 3) git push
 
+git clone https://github.com/Helen-prog/Python327.git
+- клонирование репозитория
 
 
+d -> 1
+k -> 2
+
+git pull
 
