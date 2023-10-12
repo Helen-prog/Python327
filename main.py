@@ -5789,86 +5789,469 @@
 # for i in range(5):
 #     write_json(gen_person())
 
-
-class Student:
-    def __init__(self, name, marks):
-        self.name = name
-        self.marks = marks  # []
-
-    def __str__(self):
-        # a = ""
-        # for i in self.marks:
-        #     a += str(i) + ", "
-        # return f"Студент: {self.name} - {a[:-2]}"
-        # a = ", ".join(map(str, self.marks))
-        # return f"Студент: {self.name} - {a}"
-        return f"Студент: {self.name} - {', '.join(map(str, self.marks))}"
-
-    def add_mark(self, mark):
-        self.marks.append(mark)
-
-    def delete_mark(self, index):
-        self.marks.pop(index)
-
-    def edit_mark(self, index, new_marks):
-        self.marks[index] = new_marks
-
-    def average_marks(self):
-        return round(sum(self.marks) / len(self.marks), 2)
-
-
-class Group:
-    def __init__(self, students, group):
-        self.students = students  # [st1, st2]
-        self.group = group
-
-    def __str__(self):
-        # a = ''
-        # for i in self.students:
-        #     a += str(i) + "\n"
-        # return f"{a}"
-        a = '\n'.join(map(str, self.students))
-        return f"Группа: {self.group}\n{a}"
-
-    @staticmethod
-    def change_group(group1, group2, index):
-        return group2.add_student(group1.remove_student(index))
-
-    def add_student(self, student):
-        self.students.append(student)
-
-    def remove_student(self, index):
-        return self.students.pop(index)
-
-
-def change_group(group1, group2, index):
-    return group2.add_student(group1.remove_student(index))
-
-
-st1 = Student("Bodnya", [5, 4, 3, 4, 5, 3])
-# print(st1)
-# st1.add_mark(4)
-# print(st1)
-# st1.delete_mark(2)
-# print(st1)
-# st1.edit_mark(1, 5)
-# print(st1)
-# print(st1.average_marks())
-st2 = Student('Nikolaenko', [2, 3, 5, 4, 2])
-st3 = Student('Birukov', [3, 5, 3, 2, 5, 4])
-sts = [st1, st2]
-my_group = Group(sts, "ГК Python")
-my_group.add_student(st3)
+# import json
+#
+#
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks  # []
+#
+#     def __str__(self):
+#         # a = ""
+#         # for i in self.marks:
+#         #     a += str(i) + ", "
+#         # return f"Студент: {self.name} - {a[:-2]}"
+#         # a = ", ".join(map(str, self.marks))
+#         # return f"Студент: {self.name} - {a}"
+#         return f"Студент: {self.name} - {', '.join(map(str, self.marks))}"
+#
+#     def add_mark(self, mark):
+#         self.marks.append(mark)
+#
+#     def delete_mark(self, index):
+#         self.marks.pop(index)
+#
+#     def edit_mark(self, index, new_marks):
+#         self.marks[index] = new_marks
+#
+#     def average_marks(self):
+#         return round(sum(self.marks) / len(self.marks), 2)
+#
+#     def dump_to_json(self, filename):
+#         data = {"name": self.name, "marks": self.marks}
+#         with open(filename, 'w') as f:
+#             json.dump(data, f)
+#
+#     def load_from_file(self, filename):
+#         with open(filename, "r") as f:
+#             print(json.load(f))
+#
+#
+# class Group:
+#     def __init__(self, students, group):
+#         self.students = students  # [st1, st2]
+#         self.group = group
+#
+#     def __str__(self):
+#         # a = ''
+#         # for i in self.students:
+#         #     a += str(i) + "\n"
+#         # return f"{a}"
+#         a = '\n'.join(map(str, self.students))
+#         return f"Группа: {self.group}\n{a}"
+#
+#     @staticmethod
+#     def change_group(group1, group2, index):
+#         return group2.add_student(group1.remove_student(index))
+#
+#     def add_student(self, student):
+#         self.students.append(student)
+#
+#     def remove_student(self, index):
+#         return self.students.pop(index)
+#
+#     @staticmethod
+#     def dump_group(file, group):
+#         try:
+#             data = json.load(open(file))
+#         except FileNotFoundError:
+#             data = []
+#
+#         with open(file, 'w') as f:
+#             stud_list = []
+#             for i in group.students:
+#                 stud_list.append([i.name, i.marks])
+#             data.append(stud_list)
+#             json.dump(data, f, indent=2)
+#
+#     @staticmethod
+#     def upload_group(file):
+#         with open(file, "r") as f:
+#             print(json.load(f))
+#
+#
+# # def change_group(group1, group2, index):
+# #     return group2.add_student(group1.remove_student(index))
+#
+#
+# st1 = Student("Bodnya", [5, 4, 3, 4, 5, 3])
+# # file1 = "student.json"
+# # print(st1)
+# # st1.add_mark(4)
+# # print(st1)
+# # st1.delete_mark(2)
+# # print(st1)
+# # st1.edit_mark(1, 5)
+# # print(st1)
+# # print(st1.average_marks())
+# # st1.dump_to_json(file1)
+# # st1.load_from_file(file1)
+#
+#
+# st2 = Student('Nikolaenko', [2, 3, 5, 4, 2])
+# st3 = Student('Birukov', [3, 5, 3, 2, 5, 4])
+# sts = [st1, st2]
+# my_group = Group(sts, "ГК Python")
+# my_group.add_student(st3)
+# # print(my_group)
+# my_group.remove_student(1)
 # print(my_group)
-my_group.remove_student(1)
-print(my_group)
-print()
-group22 = [st2]
-my_group2 = Group(group22, "ГК Web")
-print(my_group2)
+# print()
+# group22 = [st2]
+# my_group2 = Group(group22, "ГК Web")
+# print(my_group2)
+#
+#
+# Group.change_group(my_group, my_group2, 0)
+# print("-" * 50)
+# print(my_group)
+# print()
+# print(my_group2)
+#
+# file2 = "group.json"
+# # Group.dump_group(file2, my_group)
+# # Group.dump_group(file2, my_group2)
+# Group.upload_group(file2)
 
-Group.change_group(my_group, my_group2, 0)
-print("-" * 50)
-print(my_group)
-print()
-print(my_group2)
+
+# import requests
+# import json
+#
+# response = requests.get("https://jsonplaceholder.typicode.com/todos")
+# todos = json.loads(response.text)
+# # print(todos)
+#
+# todos_by_user = {}  # {1: 11, 2: 8, 3: 7, 4: 6, 5: 12, 6: 6, 7: 9, 8: 11, 9: 8, 10: 12}
+#
+# for todo in todos:
+#     if todo["completed"]:
+#         try:
+#             todos_by_user[todo["userId"]] += 1
+#         except KeyError:
+#             todos_by_user[todo["userId"]] = 1
+# print(todos_by_user)
+#
+# top_users = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)
+# print(top_users)  # [(5, 12), (10, 12), (1, 11), (8, 11), (7, 9), (2, 8), (9, 8), (3, 7), (4, 6), (6, 6)]
+#
+# max_complete = top_users[0][1]  # 12
+# print(max_complete)
+#
+# users = []  # ['5', '10']
+# for user, num_complete in top_users:
+#     if num_complete < max_complete:  # 11 < 12
+#         break
+#     users.append(str(user))
+#
+# print(users)
+# # users = ['9']
+# max_user = " and ".join(users)
+# print(max_user)
+#
+# m = "s" if len(users) > 1 else ""
+# print(f"User{m} {max_user} completed {max_complete} TODOs")
+#
+#
+# def keep(todo):
+#     is_complete = todo['completed']
+#     has_max_count = str(todo['userId']) in users  # ['5', '10']
+#     return is_complete and has_max_count
+#
+#
+# with open("data.json", "w") as f:
+#     filter_todos = list(filter(keep, todos))
+#     json.dump(filter_todos, f, indent=2)
+
+# CSV (Comma Separated Values) - переменные, разделенные запятыми
+
+import csv
+
+# with open("data.csv") as r_file:
+#     file_reader = csv.reader(r_file, delimiter=";")
+#     count = 0
+#     for row in file_reader:
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         else:
+#             print(f"\t{row[0]} - {row[1]}. Родился в {row[2]} году.")
+#         count += 1
+#     print(f"Всего в файле {count} строк.")
+
+
+# with open("data.csv") as r_file:
+#     file_names = ['Имя', 'Профессия', 'Год рождения']
+#     file_reader = csv.DictReader(r_file, delimiter=";", fieldnames=file_names)
+#     count = 0
+#     for row in file_reader:
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         print(f"{row['Имя']} - {row['Профессия']}.  Родился в {row['Год рождения']} году.")
+#         count += 1
+
+
+# with open('student.csv', 'w') as f:
+#     writer = csv.writer(f, delimiter=";", lineterminator='\r')
+#     writer.writerow(["Имя", "Класс", "Возраст"])
+#     writer.writerow(["Женя", 9, 15])
+#     writer.writerow(["Саша", 5, 12])
+#     writer.writerow(["Маша", 11, 18])
+
+
+# data = [['hostname', 'vendor', 'model', 'location'],
+#         ['sw1', 'Cisco', '3750', 'London, Best str'],
+#         ['sw2', 'Cisco', '3850', 'Liverpool, Better str'],
+#         ['sw3', 'Cisco', '3650', 'Liverpool, Better str'],
+#         ['sw4', 'Cisco', '3650', 'London, Best str']]
+#
+# with open('sw_data_1.csv', 'w') as f:
+#     writer = csv.writer(f, delimiter=";", lineterminator='\r')
+#     # for row in data:
+#     #     writer.writerow(row)
+#     writer.writerows(data)
+
+
+# with open('student_1.csv', 'w') as f:
+#     names = ["Имя", "Возраст"]
+#     file_writer = csv.DictWriter(f, delimiter=";", lineterminator='\r', fieldnames=names)
+#     file_writer.writeheader()
+#     file_writer.writerow({"Имя": "Саша", "Возраст": 6})
+#     file_writer.writerow({"Имя": "Маша", "Возраст": 15})
+#     file_writer.writerow({"Имя": "Вова", "Возраст": 14})
+
+
+# data = [{
+#     'hostname': 'sw1',
+#     'location': 'London',
+#     'model': '3750',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw2',
+#     'location': 'Liverpool',
+#     'model': '3850',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw3',
+#     'location': 'Liverpool',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw4',
+#     'location': 'London',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }]
+#
+# with open("dict.csv", "w") as f:
+#     writer = csv.DictWriter(f, delimiter=";", lineterminator='\r', fieldnames=list(data[0].keys()))
+#     writer.writeheader()
+#     for d in data:
+#         writer.writerow(d)
+
+# import requests
+# import json
+#
+# response = requests.get("https://jsonplaceholder.typicode.com/todos")
+# todos = json.loads(response.text)
+#
+# with open("todos.csv", "w") as f:
+#     writer = csv.DictWriter(f, delimiter=";", lineterminator='\r', fieldnames=list(todos[0].keys()))
+#     writer.writeheader()
+#     for d in todos:
+#         writer.writerow(d)
+#
+
+# Парсинг сайтов
+
+# from bs4 import BeautifulSoup
+# import re
+#
+#
+# # f = open('index.html', encoding='utf-8').read()
+# # soup = BeautifulSoup(f, "html.parser")
+# # row = soup.find("div", class_="name")  # .string или .text
+# # row = soup.find_all("div", class_="name")  # .text - не работает
+# # row = soup.find_all("div", class_="row")[1].find("div", class_="links")
+# # row = soup.find("div", id="whois")
+# # row = soup.find("div", {"data-set": "salary"})
+# # row = soup.find("div", string="Alena")  # text - более старые версии
+# # row = soup.find("div", string="Alena").parent
+# # row = soup.find("div", string="Alena").find_parent(class_="row")
+# # row = soup.find("div", id="whois3").find_next_sibling()
+# # row = soup.find("div", id="whois3").find_previous_sibling()
+#
+# # print(row)
+#
+# # def get_copywriter(tag):
+# #     whois = tag.find('div', class_="whois")
+# #     # print(whois)
+# #     if "Copywriter" in whois:
+# #         return tag
+# #     return None
+# #
+# #
+# # f = open('index.html', encoding='utf-8').read()
+# # soup = BeautifulSoup(f, "html.parser")
+# # row = soup.find_all("div", class_="row")
+# # copywriter = []
+# # for i in row:
+# #     cw = get_copywriter(i)
+# #     if cw:
+# #         copywriter.append(cw)
+# #
+# # print(copywriter)
+#
+# def get_salary(s):
+#     pattern = r"\d+"
+#     # res = re.findall(pattern, s)[0]
+#     res = re.search(pattern, s).group()
+#     print(res)
+#
+#
+# f = open('index.html', encoding='utf-8').read()
+# soup = BeautifulSoup(f, "html.parser")
+# salary = soup.find_all("div", {"data-set": "salary"})
+# for i in salary:
+#     get_salary(i.text)
+
+
+# import requests
+
+# r = requests.get("https://ru.wordpress.org/")
+# print(r.status_code)
+# print(r.headers)
+# print(r.headers['content-type'])
+# print(r.content)
+# print(r.text)
+
+# import requests
+# from bs4 import BeautifulSoup
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find("header", id="masthead").find("p", class_="site-title").text
+#     return p1
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/"
+#     print(get_data(get_html(url)))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# import requests
+# from bs4 import BeautifulSoup
+# import re
+# import csv
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refined(s):
+#     return re.sub(r"\D+", "", s)
+#
+#
+# def write_csv(data):
+#     with open("plugins.csv", "a") as f:
+#         write = csv.writer(f, delimiter=";", lineterminator="\n")
+#         write.writerow((data['name'], data['url'], data['rating']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all("section", class_="plugin-section")[1]
+#     plugins = p1.find_all("article")
+#     for plugin in plugins:
+#         name = plugin.find("h3").text
+#         url = plugin.find("h3").find("a").get("href")
+#         # url = plugin.find("h3").find("a")["href"]
+#         rating = plugin.find("span", class_="rating-count").find("a").text
+#         r = refined(rating)
+#         data = {'name': name, "url": url, "rating": r}
+#         write_csv(data)
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/plugins/"
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# import requests
+# from bs4 import BeautifulSoup
+# import csv
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refind_cy(s):
+#     return s.split()[-1]
+#
+#
+# def write_csv(data):
+#     with open("plugins_1.csv", 'a', encoding="utf-8-sig") as f:
+#         write = csv.writer(f, delimiter=";", lineterminator="\r")
+#         write.writerow((data['name'], data['url'], data['snippet'], data['active'], data['cy']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all("article", class_="plugin-card")
+#     for el in p1:
+#         try:
+#             name = el.find('h3').text
+#         except ValueError:
+#             name = ""
+#         url = el.find('h3').find("a")['href']
+#         snippet = el.find("div", class_="entry-excerpt").text.strip()
+#         active = el.find("span", class_="active-installs").text.strip()
+#         c = el.find("span", class_="tested-with").text.strip()
+#         cy = refind_cy(c)
+#         data = {
+#             'name': name,
+#             'url': url,
+#             'snippet': snippet,
+#             'active': active,
+#             'cy': cy
+#         }
+#         write_csv(data)
+#
+#
+# def main():
+#     for i in range(9, 25):
+#         url = f"https://ru.wordpress.org/plugins/browse/blocks/page/{i}/"
+#         get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+from parse_site import Parser
+
+
+def main():
+    pars = Parser("https://www.ixbt.com/live/index/news/", "news.txt")
+    pars.run()
+
+
+if __name__ == '__main__':
+    main()
