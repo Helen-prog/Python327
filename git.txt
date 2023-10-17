@@ -76,3 +76,38 @@ k -> 2
 
 git pull
 
+
+https://ru.wordpress.org/plugins/browse/blocks/
+https://ru.wordpress.org/plugins/browse/blocks/page/2/
+https://ru.wordpress.org/plugins/browse/blocks/page/3/
+
+https://ru.wordpress.org/plugins/browse/blocks/page/24/
+
+
+parse_site.py
+
+https://www.ixbt.com/live/index/news/
+https://www.ixbt.com/live/index/news/page2/
+https://www.ixbt.com/live/index/news/page3/
+
+
+
+
+
+MVC — это шаблон программирования, который позволяет разделить логику
+приложения на три части:
+• Model (модель). Получает данные от контроллера, выполняет необходимые
+операции и передаёт их в вид.
+• View (вид или представление). Получает данные от модели и выводит
+их для пользователя.
+• Controller (контроллер). Обрабатывает действия пользователя, проверяет
+полученные данные и передаёт их модели.
+
+
+articles
+	project_articles.py
+	controller.py
+	view.py
+	model.py
+	
+
