@@ -189,8 +189,60 @@ MAX
 
 pip install sqlalchemy
 
+pip install faker
 
 
 
+create_database.py
+
+models
+	__init__.py
+	database.py
+	group.py
+	lesson.py
+	student.py
+	
+
+https://www.sqlalchemy.org/
+Ознакомиться с SQLAlchemy
+
+
+Jinja
+
+pip install jinja2
+
+cars = [
+ {'model': 'Audi', 'price': 23000},
+ {'model': 'Skoda', 'price': 17300},
+ {'model': 'Renault', 'price': 44300},
+ {'model': 'Wolksvagen', 'price': 21300}
+]
+
+
+persons = [
+ {"name": "Алексей", "year": 18, "weight": 78.5},
+ {"name": "Никита", "year": 28, "weight": 82.3},
+ {"name": "Виталий", "year": 33, "weight": 94.0}
+]
+
+shablon
+	index.html
+	
+	header.html
+	main.html
+	footer.html
+	dialog.html
+	
+	page.html
+	about.html
+	
+
+pip install Flask
+
+http://127.0.0.1:5000/profile/admin
+
+int - должны присутствовать только цифры
+float - вещественные числа
+path - любые допустимые символы для указания пути + "/"
 
 
