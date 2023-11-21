@@ -246,3 +246,14 @@ float - вещественные числа
 path - любые допустимые символы для указания пути + "/"
 
 
+templates
+	index.html
+	about.html
+	base.html
+	contact.html
+	
+	
+http://127.0.0.1:5000/contact?username=admin&email=admin%40gmail.com&message=New+message
+http://127.0.0.1:5000/contact
+	
+
