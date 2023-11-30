@@ -256,4 +256,43 @@ templates
 http://127.0.0.1:5000/contact?username=admin&email=admin%40gmail.com&message=New+message
 http://127.0.0.1:5000/contact
 	
+flash(message, category="message")
+get_flashed_messages()
+
+import os
+os.urandom(20).hex()
+
+from flsk.flsite import create_db
+create_db()
+
+FDataBase.py
+
+
+http://127.0.0.1:5000/post/1
+http://127.0.0.1:5000/post/2
+http://127.0.0.1:5000/post/framework-flask-intro
+
+tasks
+	app.py
+	static
+		css
+			style.css
+	templates
+		index.html
+		base.html
+		update.html
+		
+
+pip install flask-sqlalchemy
+
+
+pip install django
+
+django-admin startproject password_generator_project
+
+python manage.py runserver
+python manage.py runserver 1.2.3.4:4000
+
+
+http://127.0.0.1:8000/
 
