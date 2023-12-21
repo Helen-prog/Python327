@@ -390,3 +390,43 @@ models.SET_DEFAULT - задачи останутся в базе, даже пр�
 forms.py
 
 
+fourth
+django-admin startproject devsearch
+python manage.py startapp projects
+python manage.py startapp users
+
+
+projects
+	templates
+		projects
+			projects.html
+			base.html
+			navbar.html
+	static
+		images
+		styles
+		uikit
+		
+		
+ForeignKey - для связи один ко многим
+ManyToManyField - для связи многие ко многим
+OneToOneField - связь один к одному
+
+Заполнить данные проектов с 3 по 9 (включительно)
+
+python manage.py shell
+
+from projects.models import Project
+
+Project.objects.all()
+Project.objects.get(id=1)
+Project.objects.filter(id=1)			
+Project.objects.filter(title__startswith="Website")			
+Project.objects.filter(title__contains="site")			
+Project.objects.filter(vote_total__gt=37)			
+Project.objects.filter(vote_total__gte=37)			
+Project.objects.exclude(title__startswith="Website")			
+
+quit()
+
+http://127.0.0.1:8000/admin/projects/project/8/change/
