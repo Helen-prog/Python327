@@ -406,6 +406,13 @@ projects
 		images
 		styles
 		uikit
+users
+	templates
+		users
+			index.html
+			profile.html
+	signals.py
+
 		
 		
 ForeignKey - для связи один ко многим
