@@ -330,7 +330,7 @@ python manage.py migrate
 
 python manage.py createsuperuser
 
-python manage.py changepassword admin(имя пользователя) (новый пароль)
+python manage.py changepassword admin(имя пользователя) новый пароль
 
 
 skills
@@ -411,6 +411,7 @@ users
 		users
 			index.html
 			profile.html
+			profile_form.html
 	signals.py
 
 		
@@ -437,3 +438,18 @@ Project.objects.exclude(title__startswith="Website")
 quit()
 
 http://127.0.0.1:8000/admin/projects/project/8/change/
+
+
+users -> forms.py
+
+http://127.0.0.1:8000/?search_query=igor
+
+utils.py
+pagination.html
+
+http://127.0.0.1:8000/projects/?search_query=web
+http://127.0.0.1:8000/projects/?page=2
+
+http://127.0.0.1:8000/projects/?search_query=web&page=2
+http://127.0.0.1:8000/projects/?search_query=web&page=3
+
