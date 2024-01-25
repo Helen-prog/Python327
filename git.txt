@@ -453,3 +453,7 @@ http://127.0.0.1:8000/projects/?page=2
 http://127.0.0.1:8000/projects/?search_query=web&page=2
 http://127.0.0.1:8000/projects/?search_query=web&page=3
 
+fifth
+django-admin startproject programming_blog
+python manage.py startapp blog
+
