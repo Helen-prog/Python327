@@ -36,6 +36,7 @@ a:hover{
     font-size: 20px;
     font-weight: bold;
     padding: 20px;
+    justify-content: space-between;
 }
 .logo{
     flex-basis: 20%;
@@ -43,6 +44,7 @@ a:hover{
 .last{
     flex-basis: 40%;
     text-align: right;
+    color: #81d4fa;
 }
 
 .sidebar ul{
@@ -138,4 +140,36 @@ form label{
 .page-num{
     margin: 6px;
     font-weight: bold;
+}
+
+input, textarea{
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+label{
+    font-size: 20px;
+}
+#id_is_published{
+    width: 20px;
+    height: 20px;
+}
+#id_cat{
+    font-size: 20px;
+    padding: 4px;
+}
+.last a{
+    display: inline;
+}
+
+.logout{
+    margin-bottom: 40px;
+}
+.logout a{
+    font-size: 20px;
+    color:#264b5d;
+    background: #81d4fa;
+    font-weight: bold;
+    padding: 20px 86px;
 }

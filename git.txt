@@ -457,3 +457,19 @@ fifth
 django-admin startproject programming_blog
 python manage.py startapp blog
 
+str - любая непустая строка, исключая символ "/"
+int - целое положительное число
+slug - английские буквы, символ дефис и подчеркивание
+uuid - цирфры, буквы английского алфавита в нижнем регистре и дефис
+path - любая непустая строка, включая символ "/"
+
+templatetags
+	blog_tags.py
+
+list_categories.html
+
+
+Mixin
+
+
+utils.py
