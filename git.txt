@@ -485,6 +485,7 @@ python manage.py collectstatic
 base_site.html
 
 
+
 git init
 git add -A
 git commit -m "blog"
@@ -517,3 +518,24 @@ pwd
 
 /home/HelenKozovyakina/.virtualenvs
 /home/HelenKozovyakina/.virtualenvs/blogvenv
+
+http://helenkozovyakina.pythonanywhere.com/category/iskusstvennyj-intellekt/
+
+https://helenkozovyakina.pythonanywhere.com/category/iskusstvennyj-intellekt/
+
+sixth
+django-admin startproject landing_page
+python manage.py startapp cms
+python manage.py startapp price
+python manage.py createsuperuser
+
+cms
+   templates
+	  cms
+		 index.html
+		 base.html
+		 carusel.html
+		 price.html
+		 
+		 
+
