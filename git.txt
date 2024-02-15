@@ -527,6 +527,8 @@ sixth
 django-admin startproject landing_page
 python manage.py startapp cms
 python manage.py startapp price
+python manage.py startapp crm
+python manage.py startapp telebot
 python manage.py createsuperuser
 
 cms
@@ -538,4 +540,26 @@ cms
 		 price.html
 		 
 		 
+@BotFather
+Бот обработчик заявок с сайта
+test_bot_send_message1_bot
+Заявки с сайта
+
+6602217900:AAG-vLA8_Lp2Ae-Sud4PiwzWu1ITAU4GPto
+
+https://api.telegram.org/bot6602217900:AAG-vLA8_Lp2Ae-Sud4PiwzWu1ITAU4GPto/sendMessage?chat_id=-4106462551&text=текст
+
+@get_id_bot
+
+-4106462551
+/my_id@get_id_bot
+
+sendmessage.py
+
+requests
+
+Заявка с  сайта:
+Имя: { name }
+Телефон: { phone }
+
 
