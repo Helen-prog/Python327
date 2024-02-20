@@ -562,4 +562,6 @@ requests
 Имя: { name }
 Телефон: { phone }
 
-
+seventh
+django-admin startproject shop
+python manage.py startapp products
