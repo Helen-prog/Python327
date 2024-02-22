@@ -301,7 +301,7 @@
 # match password:
 #     case 'admin':
 #         print("Администратор")
-#     case 'user':
+#     case 'users':
 #         print('Пользователь')
 #     case 'moderator':
 #         print('Модератор')
@@ -1327,9 +1327,9 @@
 #     return name, age, is_married
 #
 #
-# # user = get_user()
-# # print(user)
-# # n, year, married = user
+# # users = get_user()
+# # print(users)
+# # n, year, married = users
 # n, year, married = get_user()
 # print(n, year, married)
 
@@ -5939,10 +5939,10 @@
 # print(max_complete)
 #
 # users = []  # ['5', '10']
-# for user, num_complete in top_users:
+# for users, num_complete in top_users:
 #     if num_complete < max_complete:  # 11 < 12
 #         break
-#     users.append(str(user))
+#     users.append(str(users))
 #
 # print(users)
 # # users = ['9']

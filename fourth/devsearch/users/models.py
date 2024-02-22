@@ -9,7 +9,7 @@ class Profile(models.Model):
     username = models.CharField(max_length=200, null=True, blank=True)
     short_intro = models.CharField(max_length=200, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
-    profile_image = models.ImageField(upload_to="profiles/", default="profiles/user-default.png")
+    profile_image = models.ImageField(upload_to="profiles/", default="profiles/users-default.png")
     social_github = models.CharField(max_length=200, null=True, blank=True)
     social_youtube = models.CharField(max_length=200, null=True, blank=True)
     social_website = models.CharField(max_length=200, null=True, blank=True)
