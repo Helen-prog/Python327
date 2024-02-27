@@ -565,3 +565,9 @@ requests
 seventh
 django-admin startproject shop
 python manage.py startapp products
+python manage.py startapp users
+
+git clone https://github.com/Helen-prog/Python327.git
+
+User
+

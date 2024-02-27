@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
-from django.contrib import auth
+from django.contrib import auth, messages
+from products.models import Basket
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -28,6 +30,7 @@ def register(request):
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Вы успешно зарегистрировались')
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -38,11 +41,31 @@ def register(request):
     return render(request, 'users/register.html', content)
 
 
+@login_required(login_url='/users/login/')
 def profile(request):
-    form = UserProfileForm(instance=request.user)
+    user = request.user
+    if request.method == "POST":
+        form = UserProfileForm(data=request.POST, files=request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=user)
+
+    baskets = Basket.objects.filter(user=user)
+    total_quantity = sum(basket.quantity for basket in baskets)
+    total_sum = sum(basket.sum() for basket in baskets)
+
     context = {
         'title': 'Store - Профиль',
-        'form': form
+        'form': form,
+        'baskets': baskets,
+        'total_quantity': total_quantity,
+        'total_sum': total_sum
     }
     return render(request, 'users/profile.html', context)
 
+
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
